@@ -105,7 +105,7 @@ comments:
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
   waline:
-    server: https://gfp0opfm.api.lncldglobal.com # Vercal 服务端地址
+    server: https://waline-test-25k9ru5vj-chenjbs-projects.vercel.app # Vercal 服务端地址
     placeholder: 说点什么吧！ # 空白评论框时显示的文字
     avatar: mp # 默认头像  › https://waline.js.org/guide/client/avatar.html
 
