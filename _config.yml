@@ -68,9 +68,6 @@ goatcounter:
 #
 theme_mode: # [light | dark]
 
-# 启用动画背景特效
-backgroud_animation: true
-
 # 启用鼠标点击特效
 mouse_click_effect: true
 # The CDN endpoint for images.
