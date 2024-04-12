@@ -42,7 +42,12 @@ copyright:
 meta: 本站采用 :PLATFORM 主题 :THEME
 
 not_found:
-  statment: 你似乎来到了没有知识存在的荒原。
+  title: "404: 页面无法访问"
+  statment: 你似乎来到了没有知识存在的荒原
+  head_back: 去往首页
+  or: 或者
+  previous_page: 返回上页
+
 
 notification:
   update_found: 发现新版本的内容。
