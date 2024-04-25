@@ -91,8 +91,6 @@ refactor: true
                     {% endfor %}
                   </span>
                 {% endif %}
-                <i class="far fa fa-eye fa-fw me-1"></i>
-                <span class="waline-pageview-count" />
               </div>
 
               {% if post.pin %}
@@ -111,14 +109,6 @@ refactor: true
   {% endfor %}
 </div>
 <!-- #post-list -->
-<script type="module">
-  import { pageviewCount } from 'https://unpkg.com/@waline/client@v3/dist/pageview.js';
-
-  pageviewCount({
-    serverURL: '{{ site.comments.waline.server }}',
-    path: window.location.pathname,
-  });
-</script>
 {% if paginator.total_pages > 1 %}
   {% include post-paginator.html %}
 {% endif %}
