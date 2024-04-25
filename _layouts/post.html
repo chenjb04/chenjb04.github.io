@@ -67,6 +67,7 @@ tail_includes:
             {% if authors %}
               {% for author in authors %}
                 {% if site.data.authors[author].url -%}
+                  <i class="far fa fa-user-circle fa-fw me-1"></i>
                   <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
                 {%- else -%}
                   {{ site.data.authors[author].name }}
