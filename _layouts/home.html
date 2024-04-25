@@ -111,7 +111,14 @@ refactor: true
   {% endfor %}
 </div>
 <!-- #post-list -->
+<script type="module">
+  import { pageviewCount } from 'https://unpkg.com/@waline/client@v3/dist/pageview.js';
 
+  pageviewCount({
+    serverURL: '{{ site.comments.waline.server }}',
+    path: window.location.pathname,
+  });
+</script>
 {% if paginator.total_pages > 1 %}
   {% include post-paginator.html %}
 {% endif %}
