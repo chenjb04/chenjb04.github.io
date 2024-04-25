@@ -17,4 +17,5 @@
   {% endif %}
 >
   {{ include.date | date: df_strftime }}
+  {{ include.str_date | date: df_dayjs }}
 </time>
