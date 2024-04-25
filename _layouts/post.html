@@ -21,14 +21,15 @@ tail_includes:
     <div class="post-meta text-muted">
       <!-- published date -->
       <span>
-        <!-- {{ site.data.locales[lang].post.posted }} -->
         <i class="far fa fa-calendar fa-fw me-1"></i>
-        {% include datetime.html date=page.str_date tooltip=true lang=lang %}
+        {{ site.data.locales[lang].post.posted }}
+        {% include datetime.html date=page.date tooltip=true lang=lang %}
       </span>
 
       <!-- lastmod date -->
       {% if page.last_modified_at and page.last_modified_at != page.date %}
         <span>
+          <i class="far fa fa-calendar fa-fw me-1"></i>
           {{ site.data.locales[lang].post.updated }}
           {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
         </span>
