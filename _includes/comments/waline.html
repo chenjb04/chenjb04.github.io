@@ -8,6 +8,7 @@
     };
     Waline.init({
       el: '#waline',
+      reaction: true,
       serverURL: '{{ site.comments.waline.server }}',
       emoji: [
         "{{ site.data.origin[type].waline.emojis | relative_url }}/qq",
@@ -16,6 +17,8 @@
         '{{ site.data.origin[type].waline.emojis | relative_url }}/bilibili',
         '{{ site.data.origin[type].waline.emojis | relative_url }}/bmoji',
         '{{ site.data.origin[type].waline.emojis | relative_url }}/alus',
+        '{{ site.data.origin[type].waline.emojis | relative_url }}/weibo',
+        '{{ site.data.origin[type].waline.emojis | relative_url }}/soul-emoji',    
       ],
       dark: "__waline__css__",
       locale,
