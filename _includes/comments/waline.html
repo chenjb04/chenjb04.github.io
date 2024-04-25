@@ -9,6 +9,7 @@
     Waline.init({
       el: '#waline',
       reaction: true,
+      pageview: true,
       serverURL: '{{ site.comments.waline.server }}',
       emoji: [
         "{{ site.data.origin[type].waline.emojis | relative_url }}/qq",
