@@ -61,16 +61,15 @@ tail_includes:
             {% assign authors = page.authors %}
           {% endif %}
 
+          <i class="far fa fa-user-circle fa-fw me-1"></i>
           {{ site.data.locales[lang].post.written_by }}
 
           <em>
             {% if authors %}
               {% for author in authors %}
                 {% if site.data.authors[author].url -%}
-                  <i class="far fa fa-user-circle fa-fw me-1"></i>
                   <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
                 {%- else -%}
-                  <i class="far fa fa-user-circle fa-fw me-1"></i>
                   {{ site.data.authors[author].name }}
                 {%- endif %}
                 {% unless forloop.last %}{{ '</em>, <em>' }}{% endunless %}
