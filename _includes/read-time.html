@@ -24,10 +24,10 @@
   data-bs-placement="bottom"
   title="{{ words }} {{ site.data.locales[include.lang].post.words }}"
 >
+  <i class="far fa fa-clock-o fa-fw me-1"></i>
   <em>
     {{- read_time -}}
     {{ ' ' }}
-    <i class="far fa fa-clock-o fa-fw me-1"></i>
     {{- site.data.locales[include.lang].post.read_time.unit -}}
   </em>
   {%- if include.prompt -%}
