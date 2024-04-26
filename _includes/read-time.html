@@ -12,7 +12,6 @@
 {% unless read_time > 0 %}
   {% assign read_time = min_time %}
 {% endunless %}
-<i class="far fa fa-clock-o fa-fw me-1"></i>
 {% capture read_prompt %}
   {{- site.data.locales[include.lang].post.read_time.prompt -}}
 {% endcapture %}
