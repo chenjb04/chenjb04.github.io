@@ -12,16 +12,18 @@
 {% unless read_time > 0 %}
   {% assign read_time = min_time %}
 {% endunless %}
-
+<i class="far fa fa-clock-o fa-fw me-1"></i>
 {% capture read_prompt %}
   {{- site.data.locales[include.lang].post.read_time.prompt -}}
 {% endcapture %}
 
 <!-- return element -->
 <span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
   title="{{ words }} {{ site.data.locales[include.lang].post.words }}"
 >
-  <i class="far fa fa-clock-o fa-fw me-1"></i>
   <em>
     {{- read_time -}}
     {{ ' ' }}
