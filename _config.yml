@@ -29,7 +29,7 @@ github:
   username: chenjb04 # change to your github username
 
 twitter:
-  username:  # change to your twitter username
+  username: # change to your twitter username
 
 social:
   # Change to your full name.
@@ -110,14 +110,14 @@ comments:
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
   waline:
-    server: https://ec2-18-163-119-42.ap-east-1.compute.amazonaws.com # Vercal 服务端地址
+    server: https://cx330.online # Vercal 服务端地址
     placeholder: 说点什么吧！ # 空白评论框时显示的文字
     avatar: mp # 默认头像  › https://waline.js.org/guide/client/avatar.html
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
   self_host:
-    enabled:  # boolean, keep empty means false
+    enabled: # boolean, keep empty means false
     # specify the Jekyll environment, empty means both
     # only works if `assets.self_host.enabled` is 'true'
     env: # [development | production]
