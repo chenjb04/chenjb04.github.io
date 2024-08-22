@@ -14,12 +14,12 @@ DefaultContentLanguage: zh-cn
 hasCJKLanguage: true
 
 languages:
-    en:
-        languageName: English
-        title: cx330's blog
-        weight: 1
-        params:
-            description: Home
+    # en:
+    #     languageName: English
+    #     title: cx330's blog
+    #     weight: 1
+    #     params:
+    #         description: Home
     zh-cn:
         languageName: 中文
         title: cx330's blog
@@ -71,7 +71,7 @@ params:
         wordCount: true
         license:
             enabled: true
-            default: Licensed under CC BY-NC-SA 4.0
+            default: 禁止转载
 
     comments:
         enabled: true
@@ -161,6 +161,8 @@ params:
     widgets:
         homepage:
             - type: search
+              params:
+                  limit: 5
             - type: archives
               params:
                   limit: 5

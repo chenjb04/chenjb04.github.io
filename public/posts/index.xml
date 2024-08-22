@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on cx330&#39;s blog</title>
+        <link>http://localhost:1313/posts/</link>
+        <description>Recent content in Posts on cx330&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>cx330</copyright>
+        <lastBuildDate>Thu, 22 Aug 2024 16:38:16 +0800</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>2024m8d22h16m38s15</title>
+        <link>http://localhost:1313/posts/2024m8d22h16m38s15/</link>
+        <pubDate>Thu, 22 Aug 2024 16:38:16 +0800</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024m8d22h16m38s15/</guid>
+        <description>&lt;!-- 字段	介绍	默认值
+description	文章简介	
+image	特色图片	
+comments	显示 / 隐藏评论区	true
+license	文章协议 输入 false 可以隐藏	params.article.license.default
+hidden	隐藏文章（不在首页，归档等页面显示，但是可以直接通过链接访问）	false
+math	加载 KaTeX 脚本	
+toc	显示 / 隐藏目录	params.article.toc
+lastmod	最后更改时间	 --&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

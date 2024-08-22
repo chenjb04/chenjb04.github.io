@@ -98,7 +98,7 @@
 
     svg {
         vertical-align: middle;
-        width: 20px;
+        width: 18px;
         height: 20px;
         stroke-width: 1.33;
         flex-shrink: 0;
@@ -106,14 +106,14 @@
 
     time,
     a {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: var(--card-text-color-tertiary);
     }
 
     & > div {
         display: inline-flex;
         align-items: center;
-        gap: 15px;
+        gap: 5px;
     }
 }
 
