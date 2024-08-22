@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/404.html'>
 
-<link rel="stylesheet" href="/scss/style.min.0fd40a0ee2385afaa1fa8ca83f3c105cc564e1e29987ce43fc012eb6fd31cefa.css"><meta property='og:title' content="404 Page not found">
+<link rel="stylesheet" href="/scss/style.min.41d8d2f9531a0f88b1e1ae8f4f403710c9573ade3e2b580419ce88981fe9b813.css"><meta property='og:title' content="404 Page not found">
 <meta property='og:description' content="Home">
 <meta property='og:url' content='http://localhost:1313/404.html'>
 <meta property='og:site_name' content='cx330&#39;s blog'>
@@ -291,6 +291,7 @@
         <h2 class="article-subtitle">页面不存在</h2>
     </div>
     <footer class="site-footer">
+    
     <section class="copyright">
         &copy; 
         
@@ -298,11 +299,24 @@
         
         2024 cx330
     </section>
-    
-    <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    <section class="totalcount">
+        
+        
+            
+        
+            
+        
+            
+        
+        发表了1篇文章 · 
+        总计0.13k字
     </section>
+    
+    <section class="running-time">
+        已运行
+        <span id="runningdays" class="running-days"></span>
+    </section>
+    
 </footer>
 
 
@@ -342,6 +356,21 @@
         if (document.readyState === "interactive") NProgress.inc(0.8);
         if (document.readyState === "complete") NProgress.done();
     });
+</script>
+
+
+<script>
+    let s1 = '2024-08-16'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
 </script>
     </body>
 </html>

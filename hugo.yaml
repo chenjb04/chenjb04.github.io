@@ -11,7 +11,7 @@ DefaultContentLanguage: zh-cn
 
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
-hasCJKLanguage: false
+hasCJKLanguage: true
 
 languages:
     en:
@@ -68,13 +68,14 @@ params:
         math: false
         toc: true
         readingTime: true
+        wordCount: true
         license:
             enabled: true
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
         enabled: true
-        provider: disqus
+        provider: waline
 
         disqusjs:
             shortname:
@@ -109,18 +110,20 @@ params:
 
         # Waline client configuration see: https://waline.js.org/en/reference/component.html
         waline:
-            serverURL:
-            lang:
+            serverURL: https://cx330.online
+            lang: zh-CN
             pageview:
             emoji:
-                - https://unpkg.com/@waline/emojis@1.0.1/weibo
+                - https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili
+                - https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji
+                - https://npm.elemecdn.com/@waline/emojis@1.1.0/weibo
             requiredMeta:
                 - name
                 - email
                 - url
             locale:
-                admin: Admin
-                placeholder:
+                admin: 博主
+                placeholder: 欢迎评论！
 
         twikoo:
             envId:
