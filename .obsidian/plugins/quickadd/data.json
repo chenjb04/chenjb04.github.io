@@ -42,7 +42,7 @@
   "devMode": false,
   "templateFolderPath": "obs_sctipts",
   "announceUpdates": true,
-  "version": "0.14.0",
+  "version": "1.11.0",
   "disableOnlineFeatures": true,
   "enableRibbonIcon": false,
   "ai": {
@@ -106,6 +106,6 @@
     "incrementFileNameSettingMoveToDefaultBehavior": true,
     "mutualExclusionInsertAfterAndWriteToBottomOfFile": true,
     "setVersionAfterUpdateModalRelease": true,
-    "addDefaultAIProviders": false
+    "addDefaultAIProviders": true
   }
 }

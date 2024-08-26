@@ -216,9 +216,9 @@ menu:
           params:
               icon: brand-github
         
-        - identifier: RSS
+        - identifier: rss
           name: RSS
-          url: /index.html
+          url: /index.xml
           weight: 3
           params:
               icon: rss

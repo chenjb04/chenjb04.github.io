@@ -36,6 +36,18 @@
   
   var dataMap = new Map();
   
+    var key = &#34;2024-08-26&#34;;
+    var value = dataMap.get(key);
+    var wordCount =  391 ;
+    var link = &#34;/p/pip%E5%88%B6%E4%BD%9C%E7%A6%BB%E7%BA%BF%E5%8C%85/&#34;;
+    var title = &#34;pip制作离线包&#34;;
+    
+    
+    if (value == null) {
+      dataMap.set(key, [{wordCount, link, title}]);
+    } else {
+      value.push({wordCount, link, title});
+    }
     var key = &#34;2024-08-22&#34;;
     var value = dataMap.get(key);
     var wordCount =  78 ;
@@ -53,18 +65,6 @@
     var wordCount =  91 ;
     var link = &#34;/p/centos7%E5%AE%89%E8%A3%85docker/&#34;;
     var title = &#34;Centos7安装docker&#34;;
-    
-    
-    if (value == null) {
-      dataMap.set(key, [{wordCount, link, title}]);
-    } else {
-      value.push({wordCount, link, title});
-    }
-    var key = &#34;2015-10-25&#34;;
-    var value = dataMap.get(key);
-    var wordCount =  123 ;
-    var link = &#34;/p/first/&#34;;
-    var title = &#34;first&#34;;
     
     
     if (value == null) {
@@ -199,6 +199,18 @@
 });
 &lt;/script&gt; 
 
+&lt;h2 id=&#34;关于本站&#34;&gt;关于本站
+&lt;/h2&gt;&lt;p&gt;搭建：基于hugo stack主题搭建（感谢stack作者开源）&lt;/p&gt;
+&lt;p&gt;部署：Github pages&lt;/p&gt;
+&lt;p&gt;内容：主要记录一些自己多年工作经验、学习的总结（年纪大了，脑子不好，需要记录）&lt;/p&gt;
+&lt;p&gt;更新：希望能够坚持下去吧（自己都不信）&lt;/p&gt;
+&lt;h2 id=&#34;关于我&#34;&gt;关于我
+&lt;/h2&gt;&lt;p&gt;一位Python码农，高级打工牛马，从事多年网络安全搬砖工作，擅长Python开发&lt;/p&gt;
+&lt;p&gt;主机游戏爱好者，喜欢玩魂游（又菜又爱玩），不太喜欢竞技类游戏（老年人选手，打不过）&lt;/p&gt;
+&lt;h2 id=&#34;关于游戏&#34;&gt;关于游戏
+&lt;/h2&gt;&lt;p&gt;19年左右入坑主机游戏，买了一台PS5，只能说真香，前前后后玩了很多游戏，最后发现魂类游戏才是归宿&lt;/p&gt;
+&lt;p&gt;白金的游戏：
+1&lt;/p&gt;
 </description>
         </item>
         <item>

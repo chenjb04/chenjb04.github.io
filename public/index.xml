@@ -7,7 +7,70 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>cx330</copyright>
-        <lastBuildDate>Thu, 22 Aug 2024 17:14:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 26 Aug 2024 17:29:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>pip制作离线包</title>
+        <link>http://localhost:1313/p/pip%E5%88%B6%E4%BD%9C%E7%A6%BB%E7%BA%BF%E5%8C%85/</link>
+        <pubDate>Mon, 26 Aug 2024 17:29:34 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/pip%E5%88%B6%E4%BD%9C%E7%A6%BB%E7%BA%BF%E5%8C%85/</guid>
+        <description>&lt;!-- 字段	介绍	默认值
+description	文章简介	
+image	特色图片	
+comments	显示 / 隐藏评论区	true
+license	文章协议 输入 false 可以隐藏	params.article.license.default
+hidden	隐藏文章（不在首页，归档等页面显示，但是可以直接通过链接访问）	false
+math	加载 KaTeX 脚本	
+toc	显示 / 隐藏目录	params.article.toc
+lastmod	最后更改时间	 --&gt;
+&lt;h2 id=&#34;背景&#34;&gt;背景
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;解决无网络环境下安装python包的问题&lt;/li&gt;
+&lt;li&gt;解决跨架构下安装python包，如x86环境下载arm架构下的pip包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;解决方案
+&lt;/h2&gt;&lt;h3 id=&#34;在线下载包及其依赖&#34;&gt;在线下载包及其依赖
+&lt;/h3&gt;&lt;p&gt;通过 &lt;a class=&#34;link&#34; href=&#34;https://pypi.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;`PyPI官网&lt;/a&gt; 下载所需的包。这种方式对于没有依赖或依赖较少的包较为方便。但对于依赖众多的包，需要逐个下载，过程较为繁琐。&lt;/p&gt;
+&lt;h3 id=&#34;使用pip下载&#34;&gt;使用pip下载
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;准备联网环境&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;首先确保有一个可以访问互联网的环境,最好是相同python版本和架构&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;下载包及其依赖&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用以下命令下载所需的单个包和它的所有依赖：
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip3 download -d pip-package -i https://pypi.tuna.tsinghua.edu.cn/simple requests
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;其中，&lt;code&gt;-d&lt;/code&gt; 参数指定下载目录。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-i&lt;/code&gt; 参数指定使用清华镜像源以加速下载。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;跨架构安装&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于需要在不同架构之间安装包的情况，首先在目标架构的环境下使用上述方法下载包。&lt;/li&gt;
+&lt;li&gt;然后将下载好的包复制到目标环境中进行安装。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;注意事项&#34;&gt;注意事项
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;确保下载的包与系统中Python的版本和架构相兼容。&lt;/li&gt;
+&lt;li&gt;如果遇到下载速度慢或失败的问题，可以尝试更换其他镜像源，如阿里云、中国科技大学等提供的镜像源。&lt;/li&gt;
+&lt;li&gt;在使用pip下载包时，注意检查网络连接，以免下载中断导致安装失败。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Docker命令大全</title>
         <link>http://localhost:1313/p/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
         <pubDate>Thu, 22 Aug 2024 17:14:23 +0800</pubDate>
@@ -169,6 +232,18 @@ lastmod	最后更改时间	 --&gt;
   
   var dataMap = new Map();
   
+    var key = &#34;2024-08-26&#34;;
+    var value = dataMap.get(key);
+    var wordCount =  425 ;
+    var link = &#34;/p/pip%E5%88%B6%E4%BD%9C%E7%A6%BB%E7%BA%BF%E5%8C%85/&#34;;
+    var title = &#34;pip制作离线包&#34;;
+    
+    
+    if (value == null) {
+      dataMap.set(key, [{wordCount, link, title}]);
+    } else {
+      value.push({wordCount, link, title});
+    }
     var key = &#34;2024-08-22&#34;;
     var value = dataMap.get(key);
     var wordCount =  78 ;
@@ -320,6 +395,35 @@ lastmod	最后更改时间	 --&gt;
 });
 &lt;/script&gt; 
 
+&lt;h2 id=&#34;关于本站&#34;&gt;关于本站
+&lt;/h2&gt;&lt;p&gt;搭建：基于hugo stack主题搭建（感谢stack作者开源）&lt;/p&gt;
+&lt;p&gt;部署：Github pages&lt;/p&gt;
+&lt;p&gt;内容：主要记录一些自己多年工作经验、学习的总结（年纪大了，脑子不好，需要记录）&lt;/p&gt;
+&lt;p&gt;更新：希望能够坚持下去吧（自己都不信）&lt;/p&gt;
+&lt;h2 id=&#34;关于我&#34;&gt;关于我
+&lt;/h2&gt;&lt;p&gt;一位Python码农，高级打工牛马，从事多年网络安全搬砖工作，擅长Python开发&lt;/p&gt;
+&lt;p&gt;主机游戏爱好者，喜欢玩魂游（又菜又爱玩），不太喜欢竞技类游戏（老年人选手，打不过）&lt;/p&gt;
+&lt;h2 id=&#34;关于游戏&#34;&gt;关于游戏
+&lt;/h2&gt;&lt;p&gt;19年左右入坑主机游戏，买了一台PS5，只能说真香，前前后后玩了很多游戏，最后发现魂类游戏才是归宿&lt;/p&gt;
+&lt;p&gt;白金的游戏：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;师傅&lt;/li&gt;
+&lt;li&gt;潜水员戴夫&lt;/li&gt;
+&lt;li&gt;只狼&lt;/li&gt;
+&lt;li&gt;天穗之咲稻姬&lt;/li&gt;
+&lt;li&gt;HUMANITY&lt;/li&gt;
+&lt;li&gt;血源诅咒&lt;/li&gt;
+&lt;li&gt;艾尔登法环&lt;/li&gt;
+&lt;li&gt;漫威蜘蛛侠&lt;/li&gt;
+&lt;li&gt;战神5&lt;/li&gt;
+&lt;li&gt;Trophy set&lt;/li&gt;
+&lt;li&gt;对马岛之魂&lt;/li&gt;
+&lt;li&gt;战神4&lt;/li&gt;
+&lt;li&gt;瑞奇与叮当&lt;/li&gt;
+&lt;li&gt;机器人&lt;/li&gt;
+&lt;li&gt;刺客信条2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最近在玩国产3A黑神话悟空，国产之光，必须推荐，玩的同时也做了攻略，视频放在了抖音&lt;code&gt;Sakuragi___&lt;/code&gt;, 欢迎点赞关注&lt;/p&gt;
 </description>
         </item>
         <item>
