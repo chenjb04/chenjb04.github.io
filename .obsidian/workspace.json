@@ -150,6 +150,8 @@
   },
   "active": "a3e7aab65c4621bb",
   "lastOpenFiles": [
+    "public/robots.txt",
+    "static/robots.txt",
     "content/post/pip制作离线包.md",
     "public/tags/python/index.xml",
     "public/p/pip制作离线包/index.html",
@@ -179,7 +181,6 @@
     "textgenerator/templates/default/getParagraph.md",
     "textgenerator/templates/default/getTags.md",
     "textgenerator/templates/default/getEmailPos.md",
-    "textgenerator/templates/default",
     "content/post/Centos7安装docker.md",
     "content/search/index.md",
     "content/posts/2024m8d22h16m38s15.md",
