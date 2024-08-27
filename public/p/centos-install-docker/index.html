@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="关于本站 搭建：基于hugo stack主题搭建（感谢stack作者开源） 部署：Github pages 内容：主要记录一些自己多年工作经验、学习的总结（年">
-<title>关于</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="卸载旧版本docker 1 2 3 4 5 6 7 8 yum remove docker \\ docker-client \\ docker-client-latest \\ docker-common \\ docker-latest \\ docker-latest-logrotate \\ docker-logrotate \\ docker-engine 安装依赖 1 yum install -y yum-utils 配置yum docker源 1 2 3 yum-config-manager \\ --add-repo \\ https://download.docker.com/linux/centos/docker-ce.repo 安装doc">
+<title>Centos7安装docker</title>
 
-<link rel='canonical' href='http://localhost:1313/%E5%85%B3%E4%BA%8E/'>
+<link rel='canonical' href='http://localhost:1313/p/centos-install-docker/'>
 
-<link rel="stylesheet" href="/scss/style.min.a4efeb688466dbd3781306906ab04a964b6e131efa3f45e0325183140f51f9a9.css"><meta property='og:title' content="关于">
-<meta property='og:description' content="关于本站 搭建：基于hugo stack主题搭建（感谢stack作者开源） 部署：Github pages 内容：主要记录一些自己多年工作经验、学习的总结（年">
-<meta property='og:url' content='http://localhost:1313/%E5%85%B3%E4%BA%8E/'>
+<link rel="stylesheet" href="/scss/style.min.a4efeb688466dbd3781306906ab04a964b6e131efa3f45e0325183140f51f9a9.css"><meta property='og:title' content="Centos7安装docker">
+<meta property='og:description' content="卸载旧版本docker 1 2 3 4 5 6 7 8 yum remove docker \\ docker-client \\ docker-client-latest \\ docker-common \\ docker-latest \\ docker-latest-logrotate \\ docker-logrotate \\ docker-engine 安装依赖 1 yum install -y yum-utils 配置yum docker源 1 2 3 yum-config-manager \\ --add-repo \\ https://download.docker.com/linux/centos/docker-ce.repo 安装doc">
+<meta property='og:url' content='http://localhost:1313/p/centos-install-docker/'>
 <meta property='og:site_name' content='cx330&#39;s blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='og:image' content='http://localhost:1313/' />
-<meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="关于本站 搭建：基于hugo stack主题搭建（感谢stack作者开源） 部署：Github pages 内容：主要记录一些自己多年工作经验、学习的总结（年"><meta name="twitter:card" content="summary_large_image">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='Docker' /><meta property='article:published_time' content='2024-08-22T16:40:12&#43;08:00'/><meta property='article:modified_time' content='2024-08-22T16:40:12&#43;08:00'/><meta property='og:image' content='http://localhost:1313/' />
+<meta name="twitter:title" content="Centos7安装docker">
+<meta name="twitter:description" content="卸载旧版本docker 1 2 3 4 5 6 7 8 yum remove docker \\ docker-client \\ docker-client-latest \\ docker-common \\ docker-latest \\ docker-latest-logrotate \\ docker-logrotate \\ docker-engine 安装依赖 1 yum install -y yum-utils 配置yum docker源 1 2 3 yum-config-manager \\ --add-repo \\ https://download.docker.com/linux/centos/docker-ce.repo 安装doc"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -101,9 +101,11 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#关于本站">关于本站</a></li>
-    <li><a href="#关于我">关于我</a></li>
-    <li><a href="#关于游戏">关于游戏</a></li>
+    <li><a href="#卸载旧版本docker">卸载旧版本docker</a></li>
+    <li><a href="#安装依赖">安装依赖</a></li>
+    <li><a href="#配置yum-docker源">配置yum docker源</a></li>
+    <li><a href="#安装docker">安装docker</a></li>
+    <li><a href="#启动docker">启动docker</a></li>
   </ol>
 </nav>
         </div>
@@ -120,10 +122,18 @@
 
     <div class="article-details">
     
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AC%94%E8%AE%B0/" >
+                笔记
+            </a>
+        
+    </header>
+    
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/%E5%85%B3%E4%BA%8E/">关于</a>
+            <a href="/p/centos-install-docker/">Centos7安装docker</a>
         </h2>
     
         
@@ -134,6 +144,19 @@
     
     
     <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-08-22</time>
+            </div>
         
 
         
@@ -156,7 +179,7 @@
         <div>
           <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1724156229627" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4585" width="32" height="32" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M747.936 901.171H276.819c-72.2 0-130.953-55.224-130.953-123.078V244.721c0-67.854 58.752-123.078 130.953-123.078h383.525c6.597 0 12.937 2.505 17.795 6.954l192.363 178.046c5.317 4.96 8.386 11.914 8.386 19.227v452.223c0 67.854-58.752 123.078-130.952 123.078zM276.819 174.004c-43.31 0-78.592 31.703-78.592 70.717v533.372c0 39.015 35.282 70.718 78.592 70.718h471.117c43.31 0 78.592-31.703 78.592-70.718V337.324l-176.461-163.32H276.819z" fill="#B4B4B5" p-id="4586"></path><path d="M830.567 331.546H669.446c-14.471 0-26.18-11.71-26.18-26.181V156.209c0-14.471 11.709-26.18 26.18-26.18s26.181 11.709 26.181 26.18v122.976h134.94c14.471 0 26.181 11.709 26.181 26.18s-11.711 26.181-26.181 26.181z" fill="#B4B4B5" p-id="4587"></path><path d="M730.214 428.749l-92.04 343.616h-53.179L511.363 498.29l-75.677 274.074h-53.179l-92.04-343.616h49.088l69.542 255.667 69.541-255.667h63.406l69.541 255.667 69.541-255.667h49.088z" fill="currentColor" p-id="4588"></path></svg>
             <time class="article-words">
-                本文字数: 362 字
+                本文字数: 91 字
             </time>
          </div>
        
@@ -171,228 +194,92 @@
     <section class="article-content">
     
     
-    <div id="heatmap" style="
-  max-width: 1900px;
-  height: 180px;
-  padding: 2px;
-  text-align: center;
-  "
-></div>
-<script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
-<script type="text/javascript">
-  var chartDom = document.getElementById('heatmap');
-  var myChart = echarts.init(chartDom);
-  window.onresize = function() {
-      myChart.resize();
-  };
-  var option;
-
-  
-  
-  
-  
-  
-  
-  var dataMap = new Map();
-  
-    var key = "2024-08-26";
-    var value = dataMap.get(key);
-    var wordCount =  425 ;
-    var link = "/p/pip-offline-package/";
-    var title = "pip制作离线包";
-    
-    
-    if (value == null) {
-      dataMap.set(key, [{wordCount, link, title}]);
-    } else {
-      value.push({wordCount, link, title});
-    }
-    var key = "2024-08-22";
-    var value = dataMap.get(key);
-    var wordCount =  78 ;
-    var link = "/p/docker-command/";
-    var title = "Docker命令大全";
-    
-    
-    if (value == null) {
-      dataMap.set(key, [{wordCount, link, title}]);
-    } else {
-      value.push({wordCount, link, title});
-    }
-    var key = "2024-08-22";
-    var value = dataMap.get(key);
-    var wordCount =  91 ;
-    var link = "/p/centos-install-docker/";
-    var title = "Centos7安装docker";
-    
-    
-    if (value == null) {
-      dataMap.set(key, [{wordCount, link, title}]);
-    } else {
-      value.push({wordCount, link, title});
-    }var data = [];
-  
-  for (const [key, value] of dataMap.entries()) {
-    var sum = 0;
-    for (const v of value) {
-      sum += v.wordCount;
-    }
-    data.push([key, (sum / 1000).toFixed(1)]);
-  }
-  
-  var startDate = new Date();
-  var year_Mill = startDate.setFullYear((startDate.getFullYear() - 1));
-  var startDate = +new Date(year_Mill);
-  var endDate = +new Date();
-
-  var dayTime = 3600 * 24 * 1000;
-  startDate = echarts.format.formatTime('yyyy-MM-dd', startDate);
-  endDate = echarts.format.formatTime('yyyy-MM-dd', endDate);
-
-  
-  function heatmap_width(months){             
-    var startDate = new Date();
-    var mill = startDate.setMonth((startDate.getMonth() - months));
-    var endDate = +new Date();
-    startDate = +new Date(mill);
-
-    endDate = echarts.format.formatTime('yyyy-MM-dd', endDate);
-    startDate = echarts.format.formatTime('yyyy-MM-dd', startDate);
-
-    var showmonth = [];
-    showmonth.push([
-        startDate,
-        endDate
-    ]);
-    return showmonth
-  };
-
-  function getRangeArr() {
-    const windowWidth = window.innerWidth;
-    if (windowWidth >= 600) {
-      return heatmap_width(12);
-    } else if (windowWidth >= 400) {
-      return heatmap_width(9);
-    } else {
-      return heatmap_width(6);
-    }
-  }
-
-  option = {
-    title: {
-        top: 0,
-        left: 'center',
-        text: '博客热力图'
-    },
-    tooltip: {
-      hideDelay: 1000,
-      enterable: true,
-      formatter: function (p) {
-        const date = p.data[0];
-        const posts = dataMap.get(date);
-        var content = `${date}`;
-        for (const [i, post] of posts.entries()) {
-            content += "<br>";
-            var link = post.link;
-            var title = post.title;
-            var wordCount = (post.wordCount / 1000).toFixed(1);
-            content += `<a href="${link}" target="_blank">${title} | ${wordCount} k</a>`
-        }
-        return content;
-      }
-    },
-    visualMap: {
-        min: 0,
-        max: 10,
-        type: 'piecewise',
-        orient: 'horizontal',
-        left: 'center',
-        top: 30,
-        
-        inRange: {   
-          
-          color: ['#7aa8744c', '#7AA874' ] 
-        },
-        splitNumber: 4,
-        text: ['千字', ''],
-        showLabel: true,
-        itemGap: 20,
-    },
-    calendar: {
-        top: 80,
-        left: 20,
-        right: 4,
-        cellSize: ['auto', 13],
-        range: getRangeArr(),
-        itemStyle: {
-            color: '#F1F1F1',
-            borderWidth: 1.5,
-            borderColor: '#fff',
-        },
-        yearLabel: { show: false },
-        
-        splitLine: {
-          lineStyle: {
-            color: 'rgba(0, 0, 0, 0.0)',
-            
-            
-            
-            
-          }
-        }
-    },
-    series: {
-        type: 'heatmap',
-        coordinateSystem: 'calendar',
-        data: data,
-    }
-  };
-  myChart.setOption(option);
-  myChart.on('click', function(params) {
-    if (params.componentType === 'series') {
-      
-      const post = dataMap.get(params.data[0])[0];
-      const link = window.location.origin + post.link;
-      window.open(link, '_blank').focus();
-    }
-});
-</script> 
-
-<h2 id="关于本站">关于本站
-</h2><p>搭建：基于hugo stack主题搭建（感谢stack作者开源）</p>
-<p>部署：Github pages</p>
-<p>内容：主要记录一些自己多年工作经验、学习的总结（年纪大了，脑子不好，需要记录）</p>
-<p>更新：希望能够坚持下去吧（自己都不信）</p>
-<h2 id="关于我">关于我
-</h2><p>一位Python码农，高级打工牛马，从事多年网络安全搬砖工作，擅长Python开发</p>
-<p>主机游戏爱好者，喜欢玩魂游（又菜又爱玩），不太喜欢竞技类游戏（老年人选手，打不过）</p>
-<h2 id="关于游戏">关于游戏
-</h2><p>19年左右入坑主机游戏，买了一台PS5，只能说真香，前前后后玩了很多游戏，最后发现魂类游戏才是归宿</p>
-<p>白金的游戏：</p>
-<ul>
-<li>师傅</li>
-<li>潜水员戴夫</li>
-<li>只狼</li>
-<li>天穗之咲稻姬</li>
-<li>HUMANITY</li>
-<li>血源诅咒</li>
-<li>艾尔登法环</li>
-<li>漫威蜘蛛侠</li>
-<li>战神5</li>
-<li>Trophy set</li>
-<li>对马岛之魂</li>
-<li>战神4</li>
-<li>瑞奇与叮当</li>
-<li>机器人</li>
-<li>刺客信条2</li>
-</ul>
-<p>最近在玩国产3A黑神话悟空，国产之光，必须推荐，玩的同时也做了攻略，视频放在了抖音<code>Sakuragi___</code>, 欢迎点赞关注</p>
-
+    <!-- 字段	介绍	默认值
+description	文章简介	
+image	特色图片	
+comments	显示 / 隐藏评论区	true
+license	文章协议 输入 false 可以隐藏	params.article.license.default
+hidden	隐藏文章（不在首页，归档等页面显示，但是可以直接通过链接访问）	false
+math	加载 KaTeX 脚本	
+toc	显示 / 隐藏目录	params.article.toc
+lastmod	最后更改时间	 -->
+<h2 id="卸载旧版本docker">卸载旧版本docker
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum remove docker <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		  docker-client <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		  docker-client-latest <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		  docker-common <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		  docker-latest <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		  docker-latest-logrotate <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		  docker-logrotate <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		  docker-engine
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装依赖">安装依赖
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install -y yum-utils
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置yum-docker源">配置yum docker源
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum-config-manager <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --add-repo <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    https://download.docker.com/linux/centos/docker-ce.repo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装docker">安装docker
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> yum install docker-ce docker-ce-cli containerd.io
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="启动docker">启动docker
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/linux/">Linux</a>
+        
+            <a href="/tags/docker/">Docker</a>
+        
+    </section>
+
 
     
     <section class="article-copyright">
@@ -415,6 +302,41 @@
     
 
     
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/docker-command/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker命令大全</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/pip-offline-package/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">pip制作离线包</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
 
      
     

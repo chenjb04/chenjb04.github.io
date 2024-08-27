@@ -9,10 +9,10 @@
         <copyright>cx330</copyright>
         <lastBuildDate>Thu, 22 Aug 2024 17:14:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Docker命令大全</title>
-        <link>http://localhost:1313/p/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
+        <link>http://localhost:1313/p/docker-command/</link>
         <pubDate>Thu, 22 Aug 2024 17:14:23 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
+        <guid>http://localhost:1313/p/docker-command/</guid>
         <description>&lt;!-- 字段	介绍	默认值
 description	文章简介	
 image	特色图片	
@@ -53,10 +53,10 @@ lastmod	最后更改时间	 --&gt;
         </item>
         <item>
         <title>Centos7安装docker</title>
-        <link>http://localhost:1313/p/centos7%E5%AE%89%E8%A3%85docker/</link>
+        <link>http://localhost:1313/p/centos-install-docker/</link>
         <pubDate>Thu, 22 Aug 2024 16:40:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/centos7%E5%AE%89%E8%A3%85docker/</guid>
+        <guid>http://localhost:1313/p/centos-install-docker/</guid>
         <description>&lt;!-- 字段	介绍	默认值
 description	文章简介	
 image	特色图片	

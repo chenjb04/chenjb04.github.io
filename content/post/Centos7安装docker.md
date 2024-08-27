@@ -1,6 +1,6 @@
 ---
 title: Centos7安装docker
-slug: Centos7安装docker
+slug: centos-install-docker
 description: ""
 date: 2024-08-22T16:40:12+08:00
 image: 

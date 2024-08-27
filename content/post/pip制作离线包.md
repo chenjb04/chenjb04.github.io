@@ -1,6 +1,6 @@
 ---
 title: pip制作离线包
-slug: pip制作离线包
+slug: pip-offline-package
 description: ""
 date: 2024-08-26T17:29:34+08:00
 image: 

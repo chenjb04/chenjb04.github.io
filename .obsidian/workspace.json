@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/page/about/index.zh-cn.md",
+                "file": "content/post/pip制作离线包.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/page/about/index.zh-cn.md",
+                "file": "content/post/pip制作离线包.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/page/about/index.zh-cn.md",
+                "file": "content/post/pip制作离线包.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/page/about/index.zh-cn.md"
+                "file": "content/post/pip制作离线包.md"
               }
             }
           }
@@ -150,22 +150,23 @@
   },
   "active": "a3e7aab65c4621bb",
   "lastOpenFiles": [
+    "public/p/pip-offline-package/index.html",
+    "public/p/pip-offline-package",
+    "content/post/Docker命令大全.md",
+    "public/p/docker-command/index.html",
+    "public/p/docker-command",
+    "content/post/Centos7安装docker.md",
+    "public/p/centos-install-docker/index.html",
+    "public/p/centos-install-docker",
+    "content/page/about/index.zh-cn.md",
     "public/baidu_verify_codeva-WJiCMv2Qvx.html",
     "static/baidu_verify_codeva-WJiCMv2Qvx.html",
     "baidu_verify_codeva-WJiCMv2Qvx.html",
     "public/robots.txt",
     "static/robots.txt",
     "content/post/pip制作离线包.md",
-    "public/tags/python/index.xml",
-    "public/p/pip制作离线包/index.html",
-    "public/tags/python/page/1/index.html",
-    "public/tags/python/page/1",
-    "public/tags/python/page",
-    "public/tags/python/index.html",
-    "content/page/about/index.zh-cn.md",
     "textgenerator/templates/default/rewrite.md",
     "textgenerator/templates/default/getIdeas.md",
-    "content/post/Docker命令大全.md",
     "content/page/about/index.md",
     "textgenerator/templates/default/getTitles.md",
     "textgenerator/templates/default/getOutline.md",
@@ -181,7 +182,6 @@
     "textgenerator/templates/default/getParagraph.md",
     "textgenerator/templates/default/getTags.md",
     "textgenerator/templates/default/getEmailPos.md",
-    "content/post/Centos7安装docker.md",
     "content/search/index.md",
     "content/posts/2024m8d22h16m38s15.md",
     "content/posts/2024m8d22h16m29s37.md"

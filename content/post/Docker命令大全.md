@@ -1,6 +1,6 @@
 ---
 title: Docker命令大全
-slug: Docker命令大全
+slug: docker-command
 description: 
 date: 2024-08-22T17:14:23+08:00
 image: 
