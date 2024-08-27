@@ -30,12 +30,15 @@ lastmod	最后更改时间	 --&gt;
 &lt;h2 id=&#34;解决方案&#34;&gt;解决方案
 &lt;/h2&gt;&lt;h3 id=&#34;在线下载包及其依赖&#34;&gt;在线下载包及其依赖
 &lt;/h3&gt;&lt;p&gt;通过 &lt;a class=&#34;link&#34; href=&#34;https://pypi.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;PyPI官网&lt;/a&gt; 下载所需的包。这种方式对于没有依赖或依赖较少的包较为方便。但对于依赖众多的包，需要逐个下载，过程较为繁琐。&lt;/p&gt;
+    &gt;`PyPI官网&lt;/a&gt; 下载所需的包。这种方式对于没有依赖或依赖较少的包较为方便。但对于依赖众多的包，需要逐个下载，过程较为繁琐。&lt;/p&gt;
 &lt;h3 id=&#34;使用pip下载&#34;&gt;使用pip下载
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;准备联网环境&lt;/strong&gt;
-首先确保有一个可以访问互联网的环境,最好是相同python版本和架构&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;下载包及其依赖&lt;/strong&gt;：
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;准备联网环境&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;首先确保有一个可以访问互联网的环境,最好是相同python版本和架构&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;下载包及其依赖&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用以下命令下载所需的单个包和它的所有依赖：
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -51,7 +54,8 @@ lastmod	最后更改时间	 --&gt;
 &lt;li&gt;&lt;code&gt;-i&lt;/code&gt; 参数指定使用清华镜像源以加速下载。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;跨架构安装&lt;/strong&gt;：
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;跨架构安装&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;对于需要在不同架构之间安装包的情况，首先在目标架构的环境下使用上述方法下载包。&lt;/li&gt;
 &lt;li&gt;然后将下载好的包复制到目标环境中进行安装。&lt;/li&gt;
@@ -62,6 +66,7 @@ lastmod	最后更改时间	 --&gt;
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;确保下载的包与系统中Python的版本和架构相兼容。&lt;/li&gt;
 &lt;li&gt;如果遇到下载速度慢或失败的问题，可以尝试更换其他镜像源，如阿里云、中国科技大学等提供的镜像源。&lt;/li&gt;
+&lt;li&gt;在使用pip下载包时，注意检查网络连接，以免下载中断导致安装失败。&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
