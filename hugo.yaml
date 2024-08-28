@@ -1,7 +1,7 @@
 baseurl: https://example.com
 languageCode: zh-cn
 theme: hugo-theme-stack
-paginate: 3
+paginate: 5
 title: cx330's blog
 copyright: cx330
 

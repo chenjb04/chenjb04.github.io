@@ -363,9 +363,9 @@ lastmod	最后更改时间	 --&gt;
   
     var key = &#34;2024-08-28&#34;;
     var value = dataMap.get(key);
-    var wordCount =  0 ;
-    var link = &#34;/p/2024m8d28h17m10s59/&#34;;
-    var title = &#34;2024m8d28h17m10s59&#34;;
+    var wordCount =  462 ;
+    var link = &#34;/p/shell-compare-version/&#34;;
+    var title = &#34;shell比较版本号大小&#34;;
     
     
     if (value == null) {

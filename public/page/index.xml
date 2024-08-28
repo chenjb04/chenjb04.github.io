@@ -36,6 +36,18 @@
   
   var dataMap = new Map();
   
+    var key = &#34;2024-08-28&#34;;
+    var value = dataMap.get(key);
+    var wordCount =  462 ;
+    var link = &#34;/p/shell-compare-version/&#34;;
+    var title = &#34;shell比较版本号大小&#34;;
+    
+    
+    if (value == null) {
+      dataMap.set(key, [{wordCount, link, title}]);
+    } else {
+      value.push({wordCount, link, title});
+    }
     var key = &#34;2024-08-26&#34;;
     var value = dataMap.get(key);
     var wordCount =  425 ;
