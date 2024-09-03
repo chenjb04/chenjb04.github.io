@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/post/shell比较版本号大小.md",
+                "file": "content/post/Python 列表删除元素.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/post/shell比较版本号大小.md",
+                "file": "content/post/Python 列表删除元素.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/post/shell比较版本号大小.md",
+                "file": "content/post/Python 列表删除元素.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/post/shell比较版本号大小.md"
+                "file": "content/post/Python 列表删除元素.md"
               }
             }
           }
@@ -150,6 +150,12 @@
   },
   "active": "a3e7aab65c4621bb",
   "lastOpenFiles": [
+    "public/p/python-list-remove/index.html",
+    "public/p/python-list-remove",
+    "content/post/shell比较版本号大小.md",
+    "public/p/2024m9d3h19m28s25/index.html",
+    "public/p/2024m9d3h19m28s25",
+    "content/post/Python 列表删除元素.md",
     "public/tags/shell/index.xml",
     "public/tags/shell/page/1/index.html",
     "public/tags/shell/page/1",
@@ -157,12 +163,7 @@
     "public/tags/shell/index.html",
     "public/tags/shell",
     "public/p/shell-compare-version/index.html",
-    "public/p/shell-compare-version",
-    "public/p/shell-compar/index.html",
-    "public/p/shell-compar",
     "content/post/pip制作离线包.md",
-    "public/page/2/index.html",
-    "content/post/shell比较版本号大小.md",
     "content/post/Docker命令大全.md",
     "content/post/Centos7安装docker.md",
     "content/page/about/index.zh-cn.md",
@@ -184,7 +185,6 @@
     "textgenerator/templates/default/getTags.md",
     "textgenerator/templates/default/getEmailPos.md",
     "content/search/index.md",
-    "content/posts/2024m8d22h16m38s15.md",
-    "content/posts/2024m8d22h16m29s37.md"
+    "content/posts/2024m8d22h16m38s15.md"
   ]
 }
