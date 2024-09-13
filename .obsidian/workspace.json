@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "779a279b56c6d41f",
+        "id": "86d326a95479249e",
         "type": "tabs",
         "children": [
           {
-            "id": "a3e7aab65c4621bb",
+            "id": "97958cd066472f3d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/post/Python 列表删除元素.md",
+                "file": "content/post/ARM架构下编译安装nmap7.95.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/post/Python 列表删除元素.md",
+                "file": "content/post/ARM架构下编译安装nmap7.95.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/post/Python 列表删除元素.md",
+                "file": "content/post/ARM架构下编译安装nmap7.95.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/post/Python 列表删除元素.md"
+                "file": "content/post/ARM架构下编译安装nmap7.95.md"
               }
             }
           }
@@ -148,21 +148,32 @@
       "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false
     }
   },
-  "active": "a3e7aab65c4621bb",
+  "active": "97958cd066472f3d",
   "lastOpenFiles": [
-    "public/p/python-list-remove/index.html",
-    "public/p/python-list-remove",
-    "content/post/shell比较版本号大小.md",
-    "public/p/2024m9d3h19m28s25/index.html",
-    "public/p/2024m9d3h19m28s25",
+    "static/img/20240913165523.png",
+    "content/post/ARM架构下编译安装nmap7.95.md",
+    "public/img/新建位图图像.bmp",
+    "static/img/新建位图图像.bmp",
+    "public/img/20240913165523.png",
+    "static/img/20240913165523.png.canvas",
+    "Pasted image 20240913165757.png",
+    "Pasted image 20240913165523.png",
+    "public/img/20240913165523.png.canvas",
+    "public/img/未命名.canvas",
+    "assets/img",
+    "Pasted image 20240913165144.png",
+    "font color=Blue.md",
+    "public/tags/nmap/index.xml",
+    "public/p/arm-nmap-compile/index.html",
+    "public/p/arm-nmap-compile",
+    "public/tags/nmap/page/1/index.html",
+    "public/tags/nmap/page/1",
+    "public/tags/nmap/page",
+    "public/tags/nmap/index.html",
+    "public/tags/nmap",
+    "public/post/page/2/index.html",
     "content/post/Python 列表删除元素.md",
-    "public/tags/shell/index.xml",
-    "public/tags/shell/page/1/index.html",
-    "public/tags/shell/page/1",
-    "public/tags/shell/page",
-    "public/tags/shell/index.html",
-    "public/tags/shell",
-    "public/p/shell-compare-version/index.html",
+    "content/post/shell比较版本号大小.md",
     "content/post/pip制作离线包.md",
     "content/post/Docker命令大全.md",
     "content/post/Centos7安装docker.md",
@@ -183,8 +194,6 @@
     "textgenerator/templates/default/summarize.md",
     "textgenerator/templates/default/getParagraph.md",
     "textgenerator/templates/default/getTags.md",
-    "textgenerator/templates/default/getEmailPos.md",
-    "content/search/index.md",
-    "content/posts/2024m8d22h16m38s15.md"
+    "textgenerator/templates/default/getEmailPos.md"
   ]
 }

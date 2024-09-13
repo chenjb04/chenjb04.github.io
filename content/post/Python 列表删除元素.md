@@ -5,7 +5,7 @@ description: ""
 date: 2024-09-03T19:28:27+08:00
 image: 
 math: 
-license: 
+license: CC BY-NC-ND
 hidden: false
 comments: true
 draft: false

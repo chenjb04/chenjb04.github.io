@@ -7,7 +7,76 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>cx330</copyright>
-        <lastBuildDate>Wed, 28 Aug 2024 17:11:01 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 13 Sep 2024 14:44:31 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ARM架构下编译安装nmap7.95</title>
+        <link>http://localhost:1313/p/arm-nmap-compile/</link>
+        <pubDate>Fri, 13 Sep 2024 14:44:31 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/arm-nmap-compile/</guid>
+        <description>&lt;!-- 字段	介绍	默认值
+description	文章简介	
+image	特色图片	
+comments	显示 / 隐藏评论区	true
+license	文章协议 输入 false 可以隐藏	params.article.license.default
+hidden	隐藏文章（不在首页，归档等页面显示，但是可以直接通过链接访问）	false
+math	加载 KaTeX 脚本	
+toc	显示 / 隐藏目录	params.article.toc
+lastmod	最后更改时间	 --&gt;
+&lt;h1 id=&#34;下载源代码&#34;&gt;下载源代码
+&lt;/h1&gt;&lt;p&gt;从nmap官方网站下载源代码:  &lt;a class=&#34;link&#34; href=&#34;https://nmap.org/dist/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;nmap&lt;/a&gt;,这里我下载的是nmap7.95版本.tar.bz2 (bzip2 压缩)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 解压&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bzip2 -cd nmap-7.95.tar.bz2 &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tar xvf -
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 进入创建的目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; nmap-7.95
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;配置编译环境&#34;&gt;配置编译环境
+&lt;/h1&gt;&lt;p&gt;在编译之前，运行&lt;code&gt; configure&lt;/code&gt; 脚本来配置编译环境。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./configure
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;./configure &lt;/code&gt;中有几个重要的参数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--prefix=&amp;lt;directoryname&amp;gt;&lt;/code&gt;
+决定了 Nmap 及其组件的安装位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--without-zenmap&lt;/code&gt;
+此选项可不安装 Zenmap 图形GUI，zenmap依赖python环境&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--with-openssl=&amp;lt;directoryname&amp;gt;&lt;/code&gt;
+链接openssl库&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--with-libpcap=&amp;lt;directoryname&amp;gt;&lt;/code&gt;
+Nmap 使用Libpcap 库来捕获原始 IP 数据包&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--with-libpcre=&amp;lt;directoryname&amp;gt;&lt;/code&gt;
+PCRE 是一个与 Perl 兼容的正则表达式库&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--with-libdnet=&amp;lt;directoryname&amp;gt;&lt;/code&gt;
+Libdnet 是一个网络库，支持数据包操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里我不需要可视化gui，所以指定了&amp;ndash;without-zenmap`&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/local/nmap7.95 --without-zenmap
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;可能遇到的问题&#34;&gt;可能遇到的问题
+&lt;/h2&gt;</description>
+        </item>
+        <item>
         <title>shell比较版本号大小</title>
         <link>http://localhost:1313/p/shell-compare-version/</link>
         <pubDate>Wed, 28 Aug 2024 17:11:01 +0800</pubDate>

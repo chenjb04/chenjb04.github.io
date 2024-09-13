@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="docker启动所有已经停止的容器 1 docker start $(docker ps -a | awk &#39;{ print $1}&#39; | tail -n +2) docker删除正在运行的单个容器 1 docker rm -f &lt;container_id&gt; docker删除正在运行的所有容">
-<title>Docker命令大全</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="下载源代码 从nmap官方网站下载源代码: nmap,这里我下载的是nmap-7.95.tar.bz2(bzip2 压缩) 1 2 3 4 5 6 # 使用wge">
+<title>ARM架构下编译安装nmap7.95</title>
 
-<link rel='canonical' href='http://localhost:1313/p/docker-command/'>
+<link rel='canonical' href='http://localhost:1313/p/arm-nmap-compile/'>
 
-<link rel="stylesheet" href="/scss/style.min.a4efeb688466dbd3781306906ab04a964b6e131efa3f45e0325183140f51f9a9.css"><meta property='og:title' content="Docker命令大全">
-<meta property='og:description' content="docker启动所有已经停止的容器 1 docker start $(docker ps -a | awk &#39;{ print $1}&#39; | tail -n +2) docker删除正在运行的单个容器 1 docker rm -f &lt;container_id&gt; docker删除正在运行的所有容">
-<meta property='og:url' content='http://localhost:1313/p/docker-command/'>
+<link rel="stylesheet" href="/scss/style.min.a4efeb688466dbd3781306906ab04a964b6e131efa3f45e0325183140f51f9a9.css"><meta property='og:title' content="ARM架构下编译安装nmap7.95">
+<meta property='og:description' content="下载源代码 从nmap官方网站下载源代码: nmap,这里我下载的是nmap-7.95.tar.bz2(bzip2 压缩) 1 2 3 4 5 6 # 使用wge">
+<meta property='og:url' content='http://localhost:1313/p/arm-nmap-compile/'>
 <meta property='og:site_name' content='cx330&#39;s blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Docker' /><meta property='article:published_time' content='2024-08-22T17:14:23&#43;08:00'/><meta property='article:modified_time' content='2024-08-22T17:14:23&#43;08:00'/><meta property='og:image' content='http://localhost:1313/' />
-<meta name="twitter:title" content="Docker命令大全">
-<meta name="twitter:description" content="docker启动所有已经停止的容器 1 docker start $(docker ps -a | awk &#39;{ print $1}&#39; | tail -n +2) docker删除正在运行的单个容器 1 docker rm -f &lt;container_id&gt; docker删除正在运行的所有容"><meta name="twitter:card" content="summary_large_image">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='nmap' /><meta property='article:published_time' content='2024-09-13T14:44:31&#43;08:00'/><meta property='article:modified_time' content='2024-09-13T14:44:31&#43;08:00'/><meta property='og:image' content='http://localhost:1313/' />
+<meta name="twitter:title" content="ARM架构下编译安装nmap7.95">
+<meta name="twitter:description" content="下载源代码 从nmap官方网站下载源代码: nmap,这里我下载的是nmap-7.95.tar.bz2(bzip2 压缩) 1 2 3 4 5 6 # 使用wge"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -101,9 +101,19 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#docker启动所有已经停止的容器">docker启动所有已经停止的容器</a></li>
-    <li><a href="#docker删除正在运行的单个容器">docker删除正在运行的单个容器</a></li>
-    <li><a href="#docker删除正在运行的所有容器">docker删除正在运行的所有容器</a></li>
+    <li><a href="#下载源代码">下载源代码</a></li>
+    <li><a href="#配置编译环境">配置编译环境</a>
+      <ol>
+        <li><a href="#可能遇到的问题">可能遇到的问题</a></li>
+      </ol>
+    </li>
+    <li><a href="#编译">编译</a>
+      <ol>
+        <li><a href="#可能遇到的问题-1">可能遇到的问题</a></li>
+      </ol>
+    </li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#验证">验证</a></li>
   </ol>
 </nav>
         </div>
@@ -131,7 +141,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/docker-command/">Docker命令大全</a>
+            <a href="/p/arm-nmap-compile/">ARM架构下编译安装nmap7.95</a>
         </h2>
     
         
@@ -153,7 +163,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-08-22</time>
+                <time class="article-time--published">2024-09-13</time>
             </div>
         
 
@@ -168,7 +178,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -177,7 +187,7 @@
         <div>
           <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1724156229627" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4585" width="32" height="32" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M747.936 901.171H276.819c-72.2 0-130.953-55.224-130.953-123.078V244.721c0-67.854 58.752-123.078 130.953-123.078h383.525c6.597 0 12.937 2.505 17.795 6.954l192.363 178.046c5.317 4.96 8.386 11.914 8.386 19.227v452.223c0 67.854-58.752 123.078-130.952 123.078zM276.819 174.004c-43.31 0-78.592 31.703-78.592 70.717v533.372c0 39.015 35.282 70.718 78.592 70.718h471.117c43.31 0 78.592-31.703 78.592-70.718V337.324l-176.461-163.32H276.819z" fill="#B4B4B5" p-id="4586"></path><path d="M830.567 331.546H669.446c-14.471 0-26.18-11.71-26.18-26.181V156.209c0-14.471 11.709-26.18 26.18-26.18s26.181 11.709 26.181 26.18v122.976h134.94c14.471 0 26.181 11.709 26.181 26.18s-11.711 26.181-26.181 26.181z" fill="#B4B4B5" p-id="4587"></path><path d="M730.214 428.749l-92.04 343.616h-53.179L511.363 498.29l-75.677 274.074h-53.179l-92.04-343.616h49.088l69.542 255.667 69.541-255.667h63.406l69.541 255.667 69.541-255.667h49.088z" fill="currentColor" p-id="4588"></path></svg>
             <time class="article-words">
-                本文字数: 78 字
+                本文字数: 547 字
             </time>
          </div>
        
@@ -201,31 +211,188 @@ hidden	隐藏文章（不在首页，归档等页面显示，但是可以直接�
 math	加载 KaTeX 脚本	
 toc	显示 / 隐藏目录	params.article.toc
 lastmod	最后更改时间	 -->
-<h2 id="docker启动所有已经停止的容器">docker启动所有已经停止的容器
-</h2><div class="highlight"><div class="chroma">
+<h2 id="下载源代码">下载源代码
+</h2><p>从nmap官方网站下载源代码:  <a class="link" href="https://nmap.org/dist/"  target="_blank" rel="noopener"
+    >nmap</a>,这里我下载的是<code>nmap-7.95.tar.bz2</code>(bzip2 压缩)</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker start <span class="k">$(</span>docker ps -a <span class="p">|</span> awk <span class="s1">&#39;{ print $1}&#39;</span> <span class="p">|</span> tail -n +2<span class="k">)</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 使用wget或curl下载源代码（此处为示例命令）  </span>
+</span></span><span class="line"><span class="cl">wget https://nmap.org/dist/nmap-7.95.tar.bz2 
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压</span>
+</span></span><span class="line"><span class="cl">bzip2 -cd nmap-7.95.tar.bz2 <span class="p">|</span> tar xvf -
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入创建的目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> nmap-7.95
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="docker删除正在运行的单个容器">docker删除正在运行的单个容器
-</h2><div class="highlight"><div class="chroma">
+</div><h2 id="配置编译环境">配置编译环境
+</h2><p>在编译之前，运行<code> configure</code> 脚本来配置编译环境。</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm -f &lt;container_id&gt;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./configure
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="docker删除正在运行的所有容器">docker删除正在运行的所有容器
+</div><p><code>./configure </code>中有几个重要的参数</p>
+<ul>
+<li><code>--prefix=&lt;directoryname&gt;</code>
+决定了 Nmap 及其组件的安装位置</li>
+<li><code>--without-zenmap</code>
+此选项可不安装 Zenmap 图形GUI，zenmap依赖python环境</li>
+<li><code>--with-openssl=&lt;directoryname&gt;</code>
+指定OpenSSL库的位置</li>
+<li><code>--with-libpcap=&lt;directoryname&gt;</code>
+指定Libpcap库的位置，用于捕获网络数据包。</li>
+<li><code>--with-libpcre=&lt;directoryname&gt;</code>
+指定PCRE（Perl兼容正则表达式）库的位置。</li>
+<li><code>--with-libdnet=&lt;directoryname&gt;</code>
+指定Libdnet网络库的位置，用于数据包操作。</li>
+</ul>
+<p>这里我不需要可视化GUI，所以指定了&ndash;without-zenmap`</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./configure --prefix<span class="o">=</span>/usr/local/nmap7.95 --without-zenmap
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>没有报错即为成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913172719.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="可能遇到的问题">可能遇到的问题
+</h3><ol>
+<li>缺失gcc
+<img src="https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913172235.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></li>
+</ol>
+<p>安装一下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install gcc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="编译">编译
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm -f <span class="k">$(</span>docker ps -q<span class="k">)</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果没有make命令，需要安装一下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install make
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913172902.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="可能遇到的问题-1">可能遇到的问题
+</h3><p>1.缺失gcc-c++</p>
+<p><img src="https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913172817.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install gcc-c++
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意: make 编译失败时，处理完错误后，需要<code>make clean</code>清理一下，在重新执行<code>make</code></p>
+<h2 id="安装">安装
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913172934.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="验证">验证
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/usr/local/nmap7.95/bin/nmap --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>看到以下结果即为成功
+<img src="https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913173004.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>如果希望在任何位置都能直接通过<code>nmap</code>命令访问Nmap，可以添加一个软链接到系统路径中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -s /usr/local/nmap7.95/bin/nmap /usr/sbin/nmap
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>加入软链接后.可以在任何位置运行以下命令来检查Nmap版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap --version
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -236,7 +403,9 @@ lastmod	最后更改时间	 -->
     
     <section class="article-tags">
         
-            <a href="/tags/docker/">Docker</a>
+            <a href="/tags/linux/">Linux</a>
+        
+            <a href="/tags/nmap/">Nmap</a>
         
     </section>
 
@@ -270,12 +439,12 @@ lastmod	最后更改时间	 -->
             
                 
 <article class="">
-    <a href="/p/centos-install-docker/">
+    <a href="/p/shell-compare-version/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Centos7安装docker</h2>
+            <h2 class="article-title">shell比较版本号大小</h2>
         </div>
     </a>
 </article>
@@ -283,12 +452,12 @@ lastmod	最后更改时间	 -->
             
                 
 <article class="">
-    <a href="/p/arm-nmap-compile/">
+    <a href="/p/centos-install-docker/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">ARM架构下编译安装nmap7.95</h2>
+            <h2 class="article-title">Centos7安装docker</h2>
         </div>
     </a>
 </article>
@@ -309,12 +478,12 @@ lastmod	最后更改时间	 -->
             
                 
 <article class="">
-    <a href="/p/shell-compare-version/">
+    <a href="/p/pip-offline-package/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">shell比较版本号大小</h2>
+            <h2 class="article-title">pip制作离线包</h2>
         </div>
     </a>
 </article>
@@ -322,12 +491,12 @@ lastmod	最后更改时间	 -->
             
                 
 <article class="">
-    <a href="/p/pip-offline-package/">
+    <a href="/p/docker-command/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">pip制作离线包</h2>
+            <h2 class="article-title">Docker命令大全</h2>
         </div>
     </a>
 </article>
@@ -392,7 +561,7 @@ lastmod	最后更改时间	 -->
             
         
         发表了6篇文章 · 
-        总计2.92k字
+        总计3.19k字
     </section>
     
     <section class="running-time">
