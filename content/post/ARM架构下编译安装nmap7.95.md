@@ -71,6 +71,8 @@ cd nmap-7.95
 ### 可能遇到的问题
 
 1. 缺失gcc
+
+
 ![](https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913172235.png)
 
 安装一下
@@ -91,7 +93,10 @@ dnf install make
 
 1.缺失gcc-c++
 
+
 ![](https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913172817.png)
+
+
 安装
 ```bash
 dnf install gcc-c++
@@ -111,6 +116,8 @@ make install
 /usr/local/nmap7.95/bin/nmap --version
 ```
 看到以下结果即为成功
+
+
 ![](https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913173004.png)
 
 如果希望在任何位置都能直接通过`nmap`命令访问Nmap，可以添加一个软链接到系统路径中。

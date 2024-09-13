@@ -88,16 +88,16 @@ lastmod	最后更改时间	 --&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;可能遇到的问题&#34;&gt;可能遇到的问题
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;缺失gcc
-&lt;img src=&#34;https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913172235.png&#34;
+&lt;li&gt;缺失gcc&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913172235.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
 	
-&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&gt;&lt;/p&gt;
 &lt;p&gt;安装一下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -142,8 +142,8 @@ lastmod	最后更改时间	 --&gt;
 	loading=&#34;lazy&#34;
 	
 	
-&gt;
-安装&lt;/p&gt;
+&gt;&lt;/p&gt;
+&lt;p&gt;安装&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -179,8 +179,8 @@ lastmod	最后更改时间	 --&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/local/nmap7.95/bin/nmap --version
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;看到以下结果即为成功
-&lt;img src=&#34;https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913173004.png&#34;
+&lt;/div&gt;&lt;p&gt;看到以下结果即为成功&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240913173004.png&#34;
 	
 	
 	
