@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="docker启动所有已经停止的容器 1 docker start $(docker ps -a | awk &#39;{ print $1}&#39; | tail -n +2) docker删除正在运行的单个容器 1 docker rm -f &lt;container_id&gt; docker删除正在运行的所有容">
-<title>Docker命令大全</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="环境 Centos7 Python3.12.6 下载Python源码 访问Python的官方网站，下载最新的源码包,这里下载的是Python3.12.6 1 wget https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz 解压源码包 1 2 tar xzf Python-3.12.6.tgz cd Python-3.12.6">
+<title>centos7编译安装Python3.12.6</title>
 
-<link rel='canonical' href='http://localhost:1313/p/docker-command/'>
+<link rel='canonical' href='http://localhost:1313/p/centos-compile-python3/'>
 
-<link rel="stylesheet" href="/scss/style.min.a4efeb688466dbd3781306906ab04a964b6e131efa3f45e0325183140f51f9a9.css"><meta property='og:title' content="Docker命令大全">
-<meta property='og:description' content="docker启动所有已经停止的容器 1 docker start $(docker ps -a | awk &#39;{ print $1}&#39; | tail -n +2) docker删除正在运行的单个容器 1 docker rm -f &lt;container_id&gt; docker删除正在运行的所有容">
-<meta property='og:url' content='http://localhost:1313/p/docker-command/'>
+<link rel="stylesheet" href="/scss/style.min.a4efeb688466dbd3781306906ab04a964b6e131efa3f45e0325183140f51f9a9.css"><meta property='og:title' content="centos7编译安装Python3.12.6">
+<meta property='og:description' content="环境 Centos7 Python3.12.6 下载Python源码 访问Python的官方网站，下载最新的源码包,这里下载的是Python3.12.6 1 wget https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz 解压源码包 1 2 tar xzf Python-3.12.6.tgz cd Python-3.12.6">
+<meta property='og:url' content='http://localhost:1313/p/centos-compile-python3/'>
 <meta property='og:site_name' content='cx330&#39;s blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Docker' /><meta property='article:published_time' content='2024-08-22T17:14:23&#43;08:00'/><meta property='article:modified_time' content='2024-08-22T17:14:23&#43;08:00'/><meta property='og:image' content='http://localhost:1313/' />
-<meta name="twitter:title" content="Docker命令大全">
-<meta name="twitter:description" content="docker启动所有已经停止的容器 1 docker start $(docker ps -a | awk &#39;{ print $1}&#39; | tail -n +2) docker删除正在运行的单个容器 1 docker rm -f &lt;container_id&gt; docker删除正在运行的所有容"><meta name="twitter:card" content="summary_large_image">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='python' /><meta property='article:published_time' content='2024-09-14T14:34:35&#43;08:00'/><meta property='article:modified_time' content='2024-09-14T14:34:35&#43;08:00'/><meta property='og:image' content='http://localhost:1313/' />
+<meta name="twitter:title" content="centos7编译安装Python3.12.6">
+<meta name="twitter:description" content="环境 Centos7 Python3.12.6 下载Python源码 访问Python的官方网站，下载最新的源码包,这里下载的是Python3.12.6 1 wget https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz 解压源码包 1 2 tar xzf Python-3.12.6.tgz cd Python-3.12.6"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -101,9 +101,17 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#docker启动所有已经停止的容器">docker启动所有已经停止的容器</a></li>
-    <li><a href="#docker删除正在运行的单个容器">docker删除正在运行的单个容器</a></li>
-    <li><a href="#docker删除正在运行的所有容器">docker删除正在运行的所有容器</a></li>
+    <li><a href="#环境">环境</a></li>
+    <li><a href="#下载python源码">下载Python源码</a></li>
+    <li><a href="#解压源码包">解压源码包</a></li>
+    <li><a href="#编译安装">编译安装</a>
+      <ol>
+        <li><a href="#可能遇到的问题">可能遇到的问题</a></li>
+      </ol>
+    </li>
+    <li><a href="#验证安装">验证安装</a></li>
+    <li><a href="#设置软链接">设置软链接</a></li>
+    <li><a href="#设置pip">设置pip</a></li>
   </ol>
 </nav>
         </div>
@@ -131,7 +139,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/docker-command/">Docker命令大全</a>
+            <a href="/p/centos-compile-python3/">centos7编译安装Python3.12.6</a>
         </h2>
     
         
@@ -153,7 +161,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-08-22</time>
+                <time class="article-time--published">2024-09-14</time>
             </div>
         
 
@@ -177,7 +185,7 @@
         <div>
           <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1724156229627" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4585" width="32" height="32" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M747.936 901.171H276.819c-72.2 0-130.953-55.224-130.953-123.078V244.721c0-67.854 58.752-123.078 130.953-123.078h383.525c6.597 0 12.937 2.505 17.795 6.954l192.363 178.046c5.317 4.96 8.386 11.914 8.386 19.227v452.223c0 67.854-58.752 123.078-130.952 123.078zM276.819 174.004c-43.31 0-78.592 31.703-78.592 70.717v533.372c0 39.015 35.282 70.718 78.592 70.718h471.117c43.31 0 78.592-31.703 78.592-70.718V337.324l-176.461-163.32H276.819z" fill="#B4B4B5" p-id="4586"></path><path d="M830.567 331.546H669.446c-14.471 0-26.18-11.71-26.18-26.181V156.209c0-14.471 11.709-26.18 26.18-26.18s26.181 11.709 26.181 26.18v122.976h134.94c14.471 0 26.181 11.709 26.181 26.18s-11.711 26.181-26.181 26.181z" fill="#B4B4B5" p-id="4587"></path><path d="M730.214 428.749l-92.04 343.616h-53.179L511.363 498.29l-75.677 274.074h-53.179l-92.04-343.616h49.088l69.542 255.667 69.541-255.667h63.406l69.541 255.667 69.541-255.667h49.088z" fill="currentColor" p-id="4588"></path></svg>
             <time class="article-words">
-                本文字数: 78 字
+                本文字数: 341 字
             </time>
          </div>
        
@@ -201,31 +209,96 @@ hidden	隐藏文章（不在首页，归档等页面显示，但是可以直接�
 math	加载 KaTeX 脚本	
 toc	显示 / 隐藏目录	params.article.toc
 lastmod	最后更改时间	 -->
-<h2 id="docker启动所有已经停止的容器">docker启动所有已经停止的容器
-</h2><div class="highlight"><div class="chroma">
+<h2 id="环境">环境
+</h2><ul>
+<li>Centos7</li>
+<li>Python3.12.6</li>
+</ul>
+<h2 id="下载python源码">下载Python源码
+</h2><p>访问Python的<a class="link" href="https://www.python.org/ftp/python/"  target="_blank" rel="noopener"
+    >官方网站</a>，下载最新的源码包,这里下载的是Python3.12.6</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker start <span class="k">$(</span>docker ps -a <span class="p">|</span> awk <span class="s1">&#39;{ print $1}&#39;</span> <span class="p">|</span> tail -n +2<span class="k">)</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="docker删除正在运行的单个容器">docker删除正在运行的单个容器
+</div><h2 id="解压源码包">解压源码包
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm -f &lt;container_id&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar xzf Python-3.12.6.tgz
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> Python-3.12.6
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="docker删除正在运行的所有容器">docker删除正在运行的所有容器
+</div><h2 id="编译安装">编译安装
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm -f <span class="k">$(</span>docker ps -q<span class="k">)</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./configure --enable-optimizations --prefix<span class="o">=</span>/opt/python3.12.6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>--enable-optimizations</code> 选项用于启用额外的优化，使 Python 运行更快。</li>
+<li><code>--prefix</code> 指定python安装目录</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make altinstall
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>make altinstall</code>用于避免覆盖系统默认的 Python 版本。</li>
+</ul>
+<h3 id="可能遇到的问题">可能遇到的问题
+</h3><p><img src="https://cdn.jsdelivr.net/gh/chenjb04/img@main/blog/20240919202751.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>这是因为使用了<code>--enable-optimizations</code>,而gcc版本4.x比较低导致的，这里可以去掉这个参数编译，也可以升级gcc版本到8.x以上，建议升级gcc版本，参考升级gcc文章，<a class="link" href="https://lovecx330.online/p/centos-update-gcc/"  target="_blank" rel="noopener"
+    >centos7升级GCC版本</a></p>
+<h2 id="验证安装">验证安装
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/opt/python3.12.6/bin/python3.12
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>能够直接进入python shell</p>
+<h2 id="设置软链接">设置软链接
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -s /opt/python3.12.6/bin/python3.12 /usr/bin/python3.12
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置软链接后，终端可以直接<code>python3.12</code>执行</p>
+<h2 id="设置pip">设置pip
+</h2><p>pip默认安装了，只需要设置下软链接即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -s /opt/python3.12.6/bin/pip3.12 /usr/bin/pip3.12
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -236,7 +309,9 @@ lastmod	最后更改时间	 -->
     
     <section class="article-tags">
         
-            <a href="/tags/docker/">Docker</a>
+            <a href="/tags/linux/">Linux</a>
+        
+            <a href="/tags/python/">Python</a>
         
     </section>
 
@@ -270,38 +345,12 @@ lastmod	最后更改时间	 -->
             
                 
 <article class="">
-    <a href="/p/centos-install-docker/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Centos7安装docker</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/centos-update-gcc/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">centos7升级GCC版本</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/centos-compile-python3/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">centos7编译安装Python3.12.6</h2>
         </div>
     </a>
 </article>
@@ -328,6 +377,32 @@ lastmod	最后更改时间	 -->
 
         <div class="article-details">
             <h2 class="article-title">Python 列表删除元素</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/shell-compare-version/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">shell比较版本号大小</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/pip-offline-package/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">pip制作离线包</h2>
         </div>
     </a>
 </article>

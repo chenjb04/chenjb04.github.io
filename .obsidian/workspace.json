@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/post/ARM架构下编译安装nmap7.95.md",
+                "file": "content/post/centos7编译安装Python3.12.6.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/post/ARM架构下编译安装nmap7.95.md",
+                "file": "content/post/centos7编译安装Python3.12.6.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/post/ARM架构下编译安装nmap7.95.md",
+                "file": "content/post/centos7编译安装Python3.12.6.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/post/ARM架构下编译安装nmap7.95.md"
+                "file": "content/post/centos7编译安装Python3.12.6.md"
               }
             }
           }
@@ -150,8 +150,18 @@
   },
   "active": "97958cd066472f3d",
   "lastOpenFiles": [
-    "static/img/20240913165523.png",
+    "content/post/centos7升级GCC版本.md",
+    "content/post/centos7编译安装Python3.12.6.md",
+    "public/p/centos-update-gcc/index.html",
+    "public/p/centos-update-gcc",
+    "public/p/2024m9d20h9m35s35/index.html",
+    "public/p/2024m9d20h9m35s35",
+    "public/p/centos-compile-python3/index.html",
+    "public/p/centos-compile-python3",
     "content/post/ARM架构下编译安装nmap7.95.md",
+    "public/p/2024m9d14h14m34s34/index.html",
+    "public/p/2024m9d14h14m34s34",
+    "static/img/20240913165523.png",
     "public/img/新建位图图像.bmp",
     "static/img/新建位图图像.bmp",
     "public/img/20240913165523.png",
@@ -164,14 +174,6 @@
     "Pasted image 20240913165144.png",
     "font color=Blue.md",
     "public/tags/nmap/index.xml",
-    "public/p/arm-nmap-compile/index.html",
-    "public/p/arm-nmap-compile",
-    "public/tags/nmap/page/1/index.html",
-    "public/tags/nmap/page/1",
-    "public/tags/nmap/page",
-    "public/tags/nmap/index.html",
-    "public/tags/nmap",
-    "public/post/page/2/index.html",
     "content/post/Python 列表删除元素.md",
     "content/post/shell比较版本号大小.md",
     "content/post/pip制作离线包.md",
@@ -192,8 +194,6 @@
     "textgenerator/templates/default/simplify.md",
     "textgenerator/templates/default/summarizeLarge.md",
     "textgenerator/templates/default/summarize.md",
-    "textgenerator/templates/default/getParagraph.md",
-    "textgenerator/templates/default/getTags.md",
-    "textgenerator/templates/default/getEmailPos.md"
+    "textgenerator/templates/default/getParagraph.md"
   ]
 }

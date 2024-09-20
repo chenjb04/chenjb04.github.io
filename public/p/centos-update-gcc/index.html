@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="docker启动所有已经停止的容器 1 docker start $(docker ps -a | awk &#39;{ print $1}&#39; | tail -n +2) docker删除正在运行的单个容器 1 docker rm -f &lt;container_id&gt; docker删除正在运行的所有容">
-<title>Docker命令大全</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在 CentOS 7 上升级 GCC 版本可以通过多种方法实现, 这里使用个人认为最简单的方式升级，CentOS SCL 环境信息 Centos7 gcc4.8.5 -&gt;gcc8.3.1 安装SCL仓库 1 yum install centos-release-scl 配置SCL仓库源">
+<title>centos7升级GCC版本</title>
 
-<link rel='canonical' href='http://localhost:1313/p/docker-command/'>
+<link rel='canonical' href='http://localhost:1313/p/centos-update-gcc/'>
 
-<link rel="stylesheet" href="/scss/style.min.a4efeb688466dbd3781306906ab04a964b6e131efa3f45e0325183140f51f9a9.css"><meta property='og:title' content="Docker命令大全">
-<meta property='og:description' content="docker启动所有已经停止的容器 1 docker start $(docker ps -a | awk &#39;{ print $1}&#39; | tail -n +2) docker删除正在运行的单个容器 1 docker rm -f &lt;container_id&gt; docker删除正在运行的所有容">
-<meta property='og:url' content='http://localhost:1313/p/docker-command/'>
+<link rel="stylesheet" href="/scss/style.min.a4efeb688466dbd3781306906ab04a964b6e131efa3f45e0325183140f51f9a9.css"><meta property='og:title' content="centos7升级GCC版本">
+<meta property='og:description' content="在 CentOS 7 上升级 GCC 版本可以通过多种方法实现, 这里使用个人认为最简单的方式升级，CentOS SCL 环境信息 Centos7 gcc4.8.5 -&gt;gcc8.3.1 安装SCL仓库 1 yum install centos-release-scl 配置SCL仓库源">
+<meta property='og:url' content='http://localhost:1313/p/centos-update-gcc/'>
 <meta property='og:site_name' content='cx330&#39;s blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Docker' /><meta property='article:published_time' content='2024-08-22T17:14:23&#43;08:00'/><meta property='article:modified_time' content='2024-08-22T17:14:23&#43;08:00'/><meta property='og:image' content='http://localhost:1313/' />
-<meta name="twitter:title" content="Docker命令大全">
-<meta name="twitter:description" content="docker启动所有已经停止的容器 1 docker start $(docker ps -a | awk &#39;{ print $1}&#39; | tail -n +2) docker删除正在运行的单个容器 1 docker rm -f &lt;container_id&gt; docker删除正在运行的所有容"><meta name="twitter:card" content="summary_large_image">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:published_time' content='2024-09-20T09:35:36&#43;08:00'/><meta property='article:modified_time' content='2024-09-20T09:35:36&#43;08:00'/><meta property='og:image' content='http://localhost:1313/' />
+<meta name="twitter:title" content="centos7升级GCC版本">
+<meta name="twitter:description" content="在 CentOS 7 上升级 GCC 版本可以通过多种方法实现, 这里使用个人认为最简单的方式升级，CentOS SCL 环境信息 Centos7 gcc4.8.5 -&gt;gcc8.3.1 安装SCL仓库 1 yum install centos-release-scl 配置SCL仓库源"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -101,9 +101,13 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#docker启动所有已经停止的容器">docker启动所有已经停止的容器</a></li>
-    <li><a href="#docker删除正在运行的单个容器">docker删除正在运行的单个容器</a></li>
-    <li><a href="#docker删除正在运行的所有容器">docker删除正在运行的所有容器</a></li>
+    <li><a href="#环境信息">环境信息</a></li>
+    <li><a href="#安装scl仓库">安装SCL仓库</a></li>
+    <li><a href="#配置scl仓库源">配置SCL仓库源</a></li>
+    <li><a href="#安装gcc8">安装gcc8</a></li>
+    <li><a href="#临时启用devtoolset-8">临时启用devtoolset-8</a></li>
+    <li><a href="#验证gcc版本">验证gcc版本</a></li>
+    <li><a href="#注意">注意</a></li>
   </ol>
 </nav>
         </div>
@@ -131,7 +135,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/docker-command/">Docker命令大全</a>
+            <a href="/p/centos-update-gcc/">centos7升级GCC版本</a>
         </h2>
     
         
@@ -153,7 +157,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-08-22</time>
+                <time class="article-time--published">2024-09-20</time>
             </div>
         
 
@@ -177,7 +181,7 @@
         <div>
           <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1724156229627" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4585" width="32" height="32" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M747.936 901.171H276.819c-72.2 0-130.953-55.224-130.953-123.078V244.721c0-67.854 58.752-123.078 130.953-123.078h383.525c6.597 0 12.937 2.505 17.795 6.954l192.363 178.046c5.317 4.96 8.386 11.914 8.386 19.227v452.223c0 67.854-58.752 123.078-130.952 123.078zM276.819 174.004c-43.31 0-78.592 31.703-78.592 70.717v533.372c0 39.015 35.282 70.718 78.592 70.718h471.117c43.31 0 78.592-31.703 78.592-70.718V337.324l-176.461-163.32H276.819z" fill="#B4B4B5" p-id="4586"></path><path d="M830.567 331.546H669.446c-14.471 0-26.18-11.71-26.18-26.181V156.209c0-14.471 11.709-26.18 26.18-26.18s26.181 11.709 26.181 26.18v122.976h134.94c14.471 0 26.181 11.709 26.181 26.18s-11.711 26.181-26.181 26.181z" fill="#B4B4B5" p-id="4587"></path><path d="M730.214 428.749l-92.04 343.616h-53.179L511.363 498.29l-75.677 274.074h-53.179l-92.04-343.616h49.088l69.542 255.667 69.541-255.667h63.406l69.541 255.667 69.541-255.667h49.088z" fill="currentColor" p-id="4588"></path></svg>
             <time class="article-words">
-                本文字数: 78 字
+                本文字数: 424 字
             </time>
          </div>
        
@@ -201,34 +205,140 @@ hidden	隐藏文章（不在首页，归档等页面显示，但是可以直接�
 math	加载 KaTeX 脚本	
 toc	显示 / 隐藏目录	params.article.toc
 lastmod	最后更改时间	 -->
-<h2 id="docker启动所有已经停止的容器">docker启动所有已经停止的容器
+<p>在 CentOS 7 上升级 GCC 版本可以通过多种方法实现, 这里使用个人认为最简单的方式升级，<code>CentOS SCL</code></p>
+<h2 id="环境信息">环境信息
+</h2><ul>
+<li>Centos7</li>
+<li>gcc4.8.5 -&gt;gcc8.3.1</li>
+</ul>
+<h2 id="安装scl仓库">安装SCL仓库
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker start <span class="k">$(</span>docker ps -a <span class="p">|</span> awk <span class="s1">&#39;{ print $1}&#39;</span> <span class="p">|</span> tail -n +2<span class="k">)</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install centos-release-scl
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="docker删除正在运行的单个容器">docker删除正在运行的单个容器
+</div><h2 id="配置scl仓库源">配置SCL仓库源
+</h2><p>由于scl源在国外，有时候安装很慢，这里把源换成国内阿里源</p>
+<ul>
+<li>修改CentOS-SCLo-scl.repo</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 备份</span>
+</span></span><span class="line"><span class="cl">mv /etc/yum.repos.d/CentOS-SCLo-scl.repo  /etc/yum.repos.d/CentOS-SCLo-scl.repo.bak
+</span></span><span class="line"><span class="cl"><span class="c1"># 写入阿里源</span>
+</span></span><span class="line"><span class="cl">vim /etc/yum.repos.d/CentOS-SCLo-scl.repo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>centos-sclo-sclo<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span>CentOS-7 - SCLo sclo
+</span></span><span class="line"><span class="cl"><span class="nv">baseurl</span><span class="o">=</span>https://mirrors.aliyun.com/centos/7/sclo/x86_64/sclo/
+</span></span><span class="line"><span class="cl"><span class="c1"># mirrorlist=http://mirrorlist.centos.org?arch=$basearch&amp;release=7&amp;repo=sclo-sclo</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gpgcheck</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gpgkey</span><span class="o">=</span>file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SC
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>修改CentOS-SCLo-scl-rh.repo</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 备份</span>
+</span></span><span class="line"><span class="cl">mv /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo  /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo.bak
+</span></span><span class="line"><span class="cl"><span class="c1"># 写入阿里源</span>
+</span></span><span class="line"><span class="cl">vim /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>centos-sclo-rh<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span>CentOS-7 - SCLo rh
+</span></span><span class="line"><span class="cl"><span class="nv">baseurl</span><span class="o">=</span>https://mirrors.aliyun.com/centos/7/sclo/x86_64/rh/
+</span></span><span class="line"><span class="cl"><span class="c1"># mirrorlist=http://mirrorlist.centos.org?arch=$basearch&amp;release=7&amp;repo=sclo-rh</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gpgcheck</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gpgkey</span><span class="o">=</span>file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>清理缓存</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum clean all
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装gcc8">安装gcc8
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm -f &lt;container_id&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install devtoolset-8
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="docker删除正在运行的所有容器">docker删除正在运行的所有容器
+</div><h2 id="临时启用devtoolset-8">临时启用devtoolset-8
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm -f <span class="k">$(</span>docker ps -q<span class="k">)</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">scl <span class="nb">enable</span> devtoolset-8 bash
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>这将启动一个新的<code>shell</code>会话，其中<code>gcc</code>将指向 <code>devtoolset-8 </code>提供的 GCC 版本</p>
+<h2 id="验证gcc版本">验证gcc版本
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gcc --version
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>输出类似于：<code>gcc version 8.3.1 20190311 (Red Hat 8.3.1-3) (GCC)</code></p>
+<h2 id="注意">注意
+</h2><p>使用scl是临时启用的shell，只有在当前shell中gcc版本才是8.3.1，不是全局生效的，不建议全局生效，因为不同软件的编译依赖gcc版本不同，使用scl能完美解决不同gcc版本的使用问题</p>
+
 </section>
 
 
@@ -236,7 +346,7 @@ lastmod	最后更改时间	 -->
     
     <section class="article-tags">
         
-            <a href="/tags/docker/">Docker</a>
+            <a href="/tags/linux/">Linux</a>
         
     </section>
 
@@ -270,32 +380,6 @@ lastmod	最后更改时间	 -->
             
                 
 <article class="">
-    <a href="/p/centos-install-docker/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Centos7安装docker</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/centos-update-gcc/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">centos7升级GCC版本</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/centos-compile-python3/">
         
         
@@ -315,6 +399,32 @@ lastmod	最后更改时间	 -->
 
         <div class="article-details">
             <h2 class="article-title">ARM架构下编译安装nmap7.95</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/shell-compare-version/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">shell比较版本号大小</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/centos-install-docker/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Centos7安装docker</h2>
         </div>
     </a>
 </article>
