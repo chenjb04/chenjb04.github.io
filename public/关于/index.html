@@ -195,9 +195,33 @@
   
   var dataMap = new Map();
   
+    var key = "2024-09-20";
+    var value = dataMap.get(key);
+    var wordCount =  424 ;
+    var link = "/p/centos-update-gcc/";
+    var title = "centos7升级GCC版本";
+    
+    
+    if (value == null) {
+      dataMap.set(key, [{wordCount, link, title}]);
+    } else {
+      value.push({wordCount, link, title});
+    }
+    var key = "2024-09-14";
+    var value = dataMap.get(key);
+    var wordCount =  341 ;
+    var link = "/p/centos-compile-python3/";
+    var title = "centos7编译安装Python3.12.6";
+    
+    
+    if (value == null) {
+      dataMap.set(key, [{wordCount, link, title}]);
+    } else {
+      value.push({wordCount, link, title});
+    }
     var key = "2024-09-13";
     var value = dataMap.get(key);
-    var wordCount =  275 ;
+    var wordCount =  547 ;
     var link = "/p/arm-nmap-compile/";
     var title = "ARM架构下编译安装nmap7.95";
     
@@ -506,8 +530,12 @@
         
             
         
-        发表了6篇文章 · 
-        总计2.92k字
+            
+        
+            
+        
+        发表了8篇文章 · 
+        总计3.96k字
     </section>
     
     <section class="running-time">

@@ -36,9 +36,33 @@
   
   var dataMap = new Map();
   
+    var key = &#34;2024-09-20&#34;;
+    var value = dataMap.get(key);
+    var wordCount =  424 ;
+    var link = &#34;/p/centos-update-gcc/&#34;;
+    var title = &#34;centos7升级GCC版本&#34;;
+    
+    
+    if (value == null) {
+      dataMap.set(key, [{wordCount, link, title}]);
+    } else {
+      value.push({wordCount, link, title});
+    }
+    var key = &#34;2024-09-14&#34;;
+    var value = dataMap.get(key);
+    var wordCount =  341 ;
+    var link = &#34;/p/centos-compile-python3/&#34;;
+    var title = &#34;centos7编译安装Python3.12.6&#34;;
+    
+    
+    if (value == null) {
+      dataMap.set(key, [{wordCount, link, title}]);
+    } else {
+      value.push({wordCount, link, title});
+    }
     var key = &#34;2024-09-13&#34;;
     var value = dataMap.get(key);
-    var wordCount =  275 ;
+    var wordCount =  547 ;
     var link = &#34;/p/arm-nmap-compile/&#34;;
     var title = &#34;ARM架构下编译安装nmap7.95&#34;;
     
